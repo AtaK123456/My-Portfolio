@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ata Kaan | Portfolio</title>
+  <link rel="stylesheet" href="stylesheet.css" />
+  <!-- Font Awesome Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+</head>
+<body>
+  <header>
+    <a href="#" class="logo">Ata Kaan</a>
+
+    <!-- Hamburger Menu -->
+    <div class="menu-toggle" id="menu-toggle">
+      <i class="fas fa-bars"></i>
+    </div>
+
+    <nav id="navbar">
+      <a href="#" class="active">Home</a>
+      <a href="#services">Services</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="home" id="home">
+    <div class="home-img">
+      <img src="main.jpg" alt="Ata Kaan Profile" />
+    </div>
+    <div class="home-content">
+      <h1>Hi, I'm <span>Ata Kaan</span></h1>
+      <h3 class="typing-text">I'm a <span id="changing-text"></span></h3>
+      <p>
+        I am a passionate web developer creating modern and responsive websites.
+        Let's work together to bring your ideas to life!
+      </p>
+      <div class="social-icons">
+        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="#"><i class="fa-brands fa-github"></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+      <a href="#contact" class="btn">Hire Me</a>
+    </div>
+  </section>
+
+  <!-- JavaScript for Typing Effect & Menu -->
+  <script>
+    const words = [
+      "Web Developer",
+      "Software Developer",
+      "Web Designer",
+      "Freelancer"
+    ];
+
+    const textEl = document.getElementById("changing-text");
+    let index = 0;
+
+    function changeWord() {
+      textEl.classList.add("fade-out");
+      setTimeout(() => {
+        index = (index + 1) % words.length;
+        textEl.textContent = words[index];
+        textEl.classList.remove("fade-out");
+      }, 450);
+    }
+    setInterval(changeWord, 3000);
+
+    // Mobile Menu Toggle
+    const menuToggle = document.getElementById("menu-toggle");
+    const navbar = document.getElementById("navbar");
+
+    menuToggle.addEventListener("click", () => {
+      navbar.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>
