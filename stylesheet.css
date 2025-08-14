@@ -229,3 +229,26 @@ span {
         margin-top: 4rem;
     }
 }
+
+/* Fade Effect */
+#changing-text {
+    transition: opacity 0.45s ease-in-out;
+    opacity: 1;
+}
+
+#changing-text.fade-out {
+    opacity: 0;
+}
+
+/* Cursor Animation */
+.typing-text::after {
+    content: '|';
+    color: #b74b4b;
+    animation: blink 0.7s infinite;
+    margin-left: 0.2rem;
+}
+
+@keyframes blink {
+    0%, 50%, 100% { opacity: 1; }
+    25%, 75% { opacity: 0; }
+}
